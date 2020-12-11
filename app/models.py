@@ -22,6 +22,14 @@ class User(UserMixin, db.Model):
         db.session.add(self)
         db.session.commit()
 
+    @classmethod
+    def get_user_by_email(cls, email):
+        '''
+        Function to retreive a specific user by email
+        '''
+
+        return User.query.filter_by(email = email).first()
+
     @property
     def password(self):
         raise AttributeError('You cannot read the password attribute')
@@ -48,4 +56,10 @@ class Question:
         self.incorrect_answers = incorrect_answers
         self.answers = answers
         self.all_answers = all_answers
+
+class Leaderboard:
+    def __init__(self,id,name,marks):
+        self.id=id
+        self.name=name
+        self.marks=marks
 

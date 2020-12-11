@@ -12,13 +12,13 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://louise:demy@localhost/quiz_game_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://missy:yeet@localhost/quiz_game_test'
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://louise:demy@localhost/quiz_game'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://missy:yeet@localhost/quiz_game'
     DEBUG = True
 
 config_options = {
